@@ -1,0 +1,25 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+	<div class="jumbotron" id="back">
+        {% load static %}
+        <img src="{% static 'images/internationalplane.png' %}" class="img-ronuded" alt="AAI" width="250" height="250">
+        <h2>Name : {{internationalplane.name}}</h2>
+        <h3>Size : {{internationalplane.size}}</h3>
+        <h3>Terminal : {{internationalplane.terminal}}</h3>
+        <button class="btn btn-primary" data-toggle="collapse" data-target="#collapse">DESCRIPTION</button>
+        <div id="collapse" class="collapse">
+           <h4> {{internationalplane.description}}</h4>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <div class="foot">
+        <div class="well well-sm">
+          <div class="text-center">
+            @COPYRIGHT 2017
+          </div>
+        </div>
+    </div>
+{% endblock %}

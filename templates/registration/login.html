@@ -1,0 +1,34 @@
+{% extends "base_generic.html" %}
+
+{% block sidebar %}
+
+<form method="post" action="{% url 'login' %}" class="form-inline nav navbar-nav navbar-right" style="margin-top:15px;">
+{% csrf_token %}
+  <div class="form-group">
+      <spam style="color:white;">Username:</spam>
+    {{ form.username }}
+  </div>
+  <div class="form-group">
+    <spam for="pwd" style="color:white;">Password:</spam>
+    {{ form.password}}
+  </div>
+  <button type="submit" class="btn-link" style=" text-decoration: none;"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Login</button>
+  <input type="hidden" name="next" value="{{ next }}" />
+</form>
+{% endblock %}
+{% block content %}
+{% if form.errors %} 
+  <div class="alert alert-danger form-inline nav navbar-nav navbar-right">
+    <strong>Your username and password didn't match. Please try again.</strong>
+  </div>
+  {% endif %}
+<a href="{% url 'register'%}" style=" text-decoration: none; color:black;" class="pull-right"><span class="glyphicon glyphicon-user"></span>&nbsp; Signup</a>
+
+<div class="jumbotron" id="back">    
+    {% load static %}
+     <img src="{% static 'images/aai_logo.png' %}" class="img-ronuded" alt="AAI" width="60%" height="50%">       
+    <h3 style="padding-left:13%"><em>Airports Authority of India</em></h3>
+
+    </div>
+{% endblock %}
+    

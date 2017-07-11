@@ -1,0 +1,38 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <h2>You are already Registered...</h2>
+    {% else %}
+    <div class="text-center" style="padding-top:1%">
+    
+    
+        {% load static %}
+              <img src="{% static 'images/images.png' %}" class="img-ronuded" alt="AAI" width="25%" height="25%">       
+        
+ 
+    </div>
+    <form class="form-horizontal" role="form" action="" method="post" style="padding-left:33%; padding-top:4%;">
+    {% csrf_token %}
+    {% for field in form %}
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <span class="text-danger small">{{ field.errors }}</span>
+            </div>
+            <span class="control-label col-sm-2" for="song_title">{{ field.label_tag }}</span>
+            <div class="col-sm-10">{{ field }}</div>
+        </div>
+    {% endfor %}
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </div>
+        
+    </form>
+    
+{% endif %}
+{% endblock %}
+{% block sidebar %}
+{% endblock %}

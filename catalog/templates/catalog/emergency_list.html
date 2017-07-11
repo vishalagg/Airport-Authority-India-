@@ -1,0 +1,35 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+	{% if emergency_list %}
+    <div class="jumbotron" id="back">
+        <div class="log">
+    <button class="btn btn-primary" data-toggle="collapse" data-target="#collapse">Activity log</button>
+    </div>
+        <div id="collapse" class="collapse">
+        {% for plane in emergency_list %}
+        <h4> Command Recieved at : {{plane.date}}..Added to database, Plane_Name : {{plane.name}}</h4>
+        {% endfor %}
+        </div>
+        <br />
+        <ul class="list-group">
+            {% for plane in emergency_list %}
+                <li class="list-group-item list-group-item-info"><a href="{{ plane.get_absolute_url }}">{{ plane.name }}</a>
+                <span class="badge">Terminal:{{plane.terminal}}</span>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+      <h3>There are no Planes in this apron.</h3>
+    {% endif %}
+    </div>
+{% endblock %}
+{% block footer %}
+    <div class="foot">
+        <div class="well well-sm">
+          <div class="text-center">
+            @COPYRIGHT 2017
+          </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block sidebar %} 
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><span class="glyphicon glyphicon-user"></span> SignUp</a></li>
+        <li><a href="#" onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><span class="glyphicon glyphicon-log-in"></span>&nbsp Login</a></li>
+    </ul> 
+{% endblock %}     
+
+{% block content %}
+	<div class="jumbotron" id="back">
+        <h1>Airports Authority of India</h1>
+        <ul class="nav nav-pills nav-stacked">
+            <li><a class="uls" href="https://en.wikipedia.org/wiki/Airports_Authority_of_India#History">History</a></li>
+            <li><a class="uls" href="https://en.wikipedia.org/wiki/Airports_Authority_of_India#Functions">Functions</a></li>
+            <li><a class="uls" href="https://en.wikipedia.org/wiki/Airports_Authority_of_India#International_Projects">Projects</a></li>
+        </ul>           
+        <p><a class="btn btn-primary btn-lg" href="https://en.wikipedia.org/wiki/Airports_Authority_of_India">Learn more</a>
+        </p>
+    </div>
+{% endblock %}

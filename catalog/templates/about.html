@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+	<div class="jumbotron" id="back">
+        <div class="text-center">
+            <h2>About Aircraft Apron</h2>
+        </div><br />
+        <h4>The airport apron is the area of an airport where aircraft are parked, loaded or unloaded, reflueled,or boarded.Although the use of the apron is covered by regulation,,such as lighting on vehicles.It is typically more accessible to users than the runway or taxiway. however ,the apron is not usually open to the general public and a license may be required to gain access.<br />
+        The use of the apron may be controlled by the apron management service(apron control or apron advisory) to provide coordination between users.The apron is designated by the ICAO as not being part of the maneuvering area. All vehicles, aircraft and people using the apron are referred to as apron traffic
+        <br />
+        1.Recommendation- When warranted by the volume of trafficn and operarting condition ,an appropriate apron management service should be provided on an apron by an ATS unit,by another aerodrome operating authority. jointly by ATS and the aerodrome operator,or operator in the case of a company terminal,In order to: -regulate movement with the objective of preventing collision between aircraft, and between aircraft and obstacles; -regulate entry of aircraft into, and coordinate exit of aircraft from the apron with the aerodroms control tower -ensures safe and expeditious movement of vehicles and appropriate regulation of other activities.<br /> 
+        2.Recommendation-When the aerodrome control tower does not participate in the apron management service, procedures should be established to facilitate the orderly transition of aircraft between the apron management unit and the aerodrome control tower.</h4>
+    </div>
+{% endblock %}
+
+{% block about %}
+    <li class="active"><a href="{% url 'about' %}">About</a></li>
+{% endblock %}
